@@ -1,2 +1,13 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<h1>All Pages</h1>
+
+<%# <% non echoing %>
+<%# <%= echoing %>
+
+<% @pages.each do |page| %>
+  <%= link_to 'Show page', page_path(page) %>
+  <%= link_to 'Edit page', edit_page_path(page) %>
+  <%= link_to 'Delete page', page, method: :delete %>
+  <br />
+<% end %>
+
+<%= link_to 'New Page', new_page_path %>
